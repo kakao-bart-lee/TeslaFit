@@ -24,13 +24,7 @@ const CarStack = createStackNavigator(
 CarStack.navigationOptions = {
   tabBarLabel: 'Your Car',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-car${focused ? '' : '-outline'}`
-          : 'md-car'
-      }
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? `ios-car` : 'md-car'}
     />
   ),
 };
