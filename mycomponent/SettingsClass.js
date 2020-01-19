@@ -4,7 +4,8 @@ import {
   Text,
   View,
   SafeAreaView,
-  SectionList, Image,
+  SectionList,
+  Image,
 } from 'react-native';
 import Constants from "expo-constants";
 
@@ -14,42 +15,25 @@ export default class Settings extends React.Component {
     const {manifest = {}} = Constants;
 
     const sections = [
-      {data: [{value: manifest.sdkVersion}], title: 'sdkVersion'},
-      {data: [{value: manifest.privacy}], title: 'privacy'},
-      {data: [{value: manifest.version}], title: 'version'},
-      {data: [{value: manifest.orientation}], title: 'orientation'},
+      {
+        data: [{value: manifest.sdkVersion}],
+        title: 'sdkVersion'
+      },
+      {
+        data: [{value: manifest.privacy}],
+        title: 'privacy'
+      },
+      {
+        data: [{value: manifest.version}],
+        title: 'version'
+      },
+      {
+        data: [{value: manifest.orientation}],
+        title: 'orientation'
+      },
       {
         data: [{value: manifest.primaryColor, type: 'color'}],
         title: 'primaryColor',
-      },
-      {
-        data: [{value: manifest.splash && manifest.splash.image}],
-        title: 'splash.image',
-      },
-      {
-        data: [
-          {
-            value: manifest.splash && manifest.splash.backgroundColor,
-            type: 'color',
-          },
-        ],
-        title: 'splash.backgroundColor',
-      },
-      {
-        data: [
-          {
-            value: manifest.splash && manifest.splash.resizeMode,
-          },
-        ],
-        title: 'splash.resizeMode',
-      },
-      {
-        data: [
-          {
-            value: manifest.ios && manifest.ios.supportsTablet ? 'true' : 'false',
-          },
-        ],
-        title: 'ios.supportsTablet',
       },
     ];
 
